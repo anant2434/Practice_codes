@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+            function dividenumbers()
+            {
+            var a=parseInt(document.getElementById('n1').value);
+            var b=parseInt(document.getElementById('n2').value);
+            var ans=a/b;
+           document.getElementById("result").value=ans;
+
+           document.getElementById("mydiv").innerHTML="Addition:"+ans;
+
+           
+           
+           
+           
+           
+           }</script>
+    </head>
+    <body>
+        <form name="frm">
+            number 1:<input type="text" name="num1" id="n1"><br>
+            number 2:<input type="text" name="num2" id="n2"><br>
+            result:<input type="text" name="result" id="result" disabled><br>
+            <button type="button" name="add" id="add" value="add" onclick="dividenumbers()">divide numbers</button>
+        
+        </form>
+        <div id="mydiv"></div>
+    </body>
+</html>
