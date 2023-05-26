@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function decrementcount(){
+                if(typeof(Storage)!==undefined)
+                {
+                    if(localStorage.count===undefined ||localStorage.count==="0"){
+                        localStorage.count=0;
+                    }
+                    else
+                    {
+                        val=parseInt(localStorage.getItem("count"))
+                        localStorage.count=val-1
+                    }
+                    
+
+                    }
+                    else{
+                       document.getElementById("mydiv").innerHTML="web storage is not supported"
+                    }
+                    document.getElementById("mydiv").innerHTML="you clicked"+localStorage.count+" times";
+                }
+
+                function increment(){
+                    if(typeof(Storage)!==undefined){
+                        if(localStorage.count===undefined){
+                            localStorage.count=1
+                            localStorage.name="Kishori";
+
+                        }
+                        else{
+                            val=parseInt(localStorage.count);
+                            localStorage.count=val+1
+                        }
+                        document.getElementById("mydiv").innerHTML="you clicked"+localStorage.count+ " times";
+                    }
+                    
+                }
+
+            
+        </script>
+    </head>
+
+    <body>
+        <button type="button" name="btn" id="btn1" onclick="remove()">
+remove count
+        </button>
+        <button type="button" name="btn" id="btn2" onclick="decrementcount()">decrement count</button>
+        <button type="button" name="btn" id="btn3" onclick="increment()">increment count</button>
+        <div id="mydiv">
+
+        </div>
+    </body>
+
+</html>

@@ -4,19 +4,90 @@
             function changestring(){
                 var sel=document.getElementById("operation");
                 var pos=sel.selectedIndex
-                alert(sel.selectedIndex);
-                alert(sel.options[pos].value);
+                //alert(sel.selectedIndex);
+                //alert(sel.options[pos].value);
+                var calc=sel.options[pos].value;
+                var str=document.getElementById("str").value;
+
+
+                switch(calc){
+
+                    case "upper":
+                        result= "uppercase: "+str.toUpperCase();
+                        break;
+                      
+                    case "lower" :
+                        result="lowercase: "+str.toLowerCase();
+                        break;
+                    
+                    case "charAt":
+                        s=prompt("enter the position to find character")
+                        result="position : "+str.charAt(s);
+                        break;
+
+                    case "slice":
+                        s=prompt("enter start and end position as comma separated value");
+                        arr=s.split(',') 
+                        result="concatenate string: "+str.slice(arr[0],arr[1]);
+                        break;  
+                        
+                    case "concat":
+                        s=prompt("enter string to concat")  
+                        result="Concatenated string:"+str.concat(s);
+                        break; 
+                     
+                    case "match":
+                        //pattern=/anni/gi
+                        s=prompt("enter string to match")
+                        result="Match : "+str.match(s);
+                        break;
+                        
+                    case "replace":
+                       // s=prompt("enter string to replace")
+                       pattern=/ani/i
+                        result="Replace:"+str.replace(pattern,'sssss');
+                        break;
+                    case "search":
+                      pattern=/et/gi
+                      result="Position: "+str.search(pattern);
+                      break;
+                    case "split":arguments
+                    ch=prompt("enter delimiter")
+                    result="split data: "+str.split(ch);
+                    console.log(str.split(ch))
+                    break;
+
+                    case "indexOf":
+                    s=prompt("enter string to search")
+                    result="index of data: "+str.indexOf(s);
+                    break;
+                    case "includes":
+                    s=prompt("enter string to search")
+                    result="index of data: "+str.includes(s);
+                    break;    
+                }
+                document.getElementById("mydiv").innerHTML=result
             }
         </script>
     </head>
     <body>
         <form>
             Enter String:<input type="text" name="str" id="str">
-            Operation:<select id="operation">
+            Operation:<select name="op" id="operation">
                 <option value="upper">upper case</option>
                 <option value="lower">lower case</option>
+                <option value="charAt">charAt</option>
+                <option value="slice">slice</option>
+                <option value="concat">concat</option>
+               
+                <option value="match">match</option>
+                <option value="replace">replace</option>
+                <option value="search">search</option>
+                <option value="split">split</option>
+                <option value="indexOf">indexOf</option>
+                <option value="includes">includes</option>
             </select>
-            <button type="button" name="btn" id="btn" value="btn" onclick="changesstring()">display result</button>
+            <button type="button" name="btn" id="btn" value="btn" onclick="changestring()">display result</button>
         </form>
         <div id="mydiv">
             
