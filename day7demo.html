@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <script>
+            arr=[{pid:1,pname:'chair',qty:34,price:3333},
+            {pid:2,pname:'table',qty:35,price:3121},
+            {pid:3,pname:'shelf',qty:30,price:3252},
+            {pid:4,pname:'stool',qty:10,price:3968}]
+
+
+          function displaytable(){
+            str="table border='2'><tr><th>product name</th>><th>product qty</th><th>product price</th>></tr>"
+            for(var ob of array){
+                str+="<tr><td>"+ob.pid+"</td><td>"+ob.pname+"</td><td>"+ob.price+"</td></tr>"
+                
+            }
+          
+            str+="</table>"
+
+            document.getElementById("mydiv").innerHTML=str;
+
+
+
+          }
+
+          let clearform=()=>{
+         document.getElementById("pid").value=""
+         document.getElementById("pname").value=""
+         document.getElementById("qty").value=""
+         document.getElementById("price").value=""
+          }
+
+         function addnewproduct(){
+            var pid=document.getElementById("pid").value
+            var pid=document.getElementById("pname").value
+            var pid=document.getElementById("qty").value
+            var pid=document.getElementById("price").value
+
+            var obj={pid:parseInt(pid),pname:pname,qty:parseInt(qty),price:parseFloat(price)}
+            arr.push(ob)
+            displaytable()
+            clearform()
+            document.getElementById("pid").focus()
+
+         }
+
+
+
+
+        </script>
+    </head>
+    <body>
+        <form>
+            Product id:<input type="text" name="pid" id="pid"><br>
+            Product name:<input type="text" name="pname" id="pname"><br>
+            Product quantity:<input type="text" name="qty" id="qty"><br>
+            Product price:<input type="text" name="price" id="price"><br>
+
+            <button type="button" name="btn" id="add" value="add" onclick="addnewproduct()">add new</button>
+            <button type="button" name="btn" id="del" value="del" onclick="deleteproduct()">delete product</button>
+            <button type="button" name="btn" id="update" value="update" onclick="updateproduct()">update product</button>
+
+        </form>
+        <div id="mydiv">
+
+        </div>
+    </body>
+</html>

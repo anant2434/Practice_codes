@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <script>
+            arr=[]
+            function displaylist(){
+                str="<ul>"
+                    for(var i=0;i<arr.length;i++){
+                        str=str+"<li>"+arr[i]+"</li>"
+                    }
+                    str=str+"</ul>"
+                    console.log(str);
+                    document.getElementById("mydiv").innerHTML=str;
+            }
+
+           var displaydetails=function(){
+            displaylist()
+           }
+
+           function updatename(){
+            nm=document.getElementById("name").value;
+            pos=arr.findIndex(name=>name===nm);
+            prt = prompt("enter ")
+            
+            arr.splice(pos,3,prt)
+            displaylist();
+           }
+
+            function addname(){
+                nm=document.getElementById("name").value;
+                arr.push(nm);
+                displaylist();
+                document.getElementById("name").value="";
+                document.getElementById("name").focus()
+            }
+         
+
+            var deletename=()=>{
+                nm=document.getElementById("name").value;
+                cnt=0
+                for(var name of arr){
+                    if(name==nm)
+                    {
+                        arr.splice(cnt,1)
+                        break;
+                    }
+                    cnt++
+                }
+                displaylist();
+            document.getElementById("name").value=""
+            document.getElementById("name").focus()
+            }
+
+
+           
+
+
+
+        </script>
+    </head>
+    <body>
+Name:<input type="text" name="name" id="name">
+<button type="button" name="btn" id="add" valu="add" onclick="addname()">add new</button>
+
+<button type="button" name="name" id="delete name"
+value="delete name" onclick="deletename()">
+    delete name
+</button>
+<button type="button" name="btn" id="update" value="delete name" onclick="updatename()">update name</button>
+<div id="mydiv"></div>
+    </body>
+</html>

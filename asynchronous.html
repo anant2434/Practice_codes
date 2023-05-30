@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script>
+            function displaytable(resp){
+             
+               var str="<table border='2><tr><th>Id</th><th>Use Id</th><th>title</th></tr>">
+
+             for(var ob of resp){
+                str+=`<tr><td>${ob.id}</td><td>${ob.userId}</td>${ob.title}</td><td>${ob.body}</td></tr>
+             }
+
+
+
+            }
+        </script>
+    </head>
+
+
+
+    <body>
+        <button type="text" name="btn" id="btn" value="btn" onclick="sendrequest()">send ajax request</button>
+
+        <div id="mydiv"></div>
+    </body>
+
+</html>
