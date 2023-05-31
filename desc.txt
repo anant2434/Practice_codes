@@ -1,0 +1,5 @@
+The target property returns the element where the event occured.
+
+The target property is read-only.
+
+The target property returns the element on which the event occurred, opposed to the currentTarget property, which returns the element whose event listener triggered the event.
