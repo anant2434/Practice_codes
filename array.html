@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <script>
+            arr=[1,2,10,5]
+            arr1=new Array(12,13,14,1,"asd")
+            console.log(arr)
+            console.log(arr1)
+            arr2=[arr,arr1]
+            console.log(arr2)
+            arr3=[...arr,...arr1]
+            console.log(arr3)
+            var [x,y,z,p]=arr
+            console.log(x,y,z,p)
+            let [a,b,c,d,e=45]=arr
+            console.log(a,b,c,d,e)
+            let[d1,f]=arr
+            console.log(d1,f)
+            let[,,s,t]=arr
+            console.log(s,t)
+
+        </script>
+    </body>
+</html>

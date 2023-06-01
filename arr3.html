@@ -1,0 +1,41 @@
+<html>
+    <body>
+        <script>
+            arr=[1,10,20,34,555,100,8]
+            arr.sort()
+            document.write("sortd array"+arr)
+            function compare(a,b)
+            {/* 
+                if (a<b)
+                return -1
+                
+                else if (a===b)
+                return 0
+                else
+                return 1
+
+ */
+
+              return a-b
+            }
+
+            arr.sort(compare)
+            //arr.sort(a,b)
+            arr.sort((a,b)=>a-b)
+            document.write("sortd array"+arr)
+
+
+            arr1=[1,10,20,34,555,100,8]
+            p=arr.filter(a=>a>5 && a%5==0)
+            document.write("find index"+p)
+
+
+            arr2=arr.map(a=>a*a)
+            document.write("mapped array"+arr2)
+         
+
+             s=arr.reduce((acc,num)=>acc+num)
+             document.write( "reduced array"+arr2+"<br>")
+        </script>
+    </body>
+</html>

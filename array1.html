@@ -1,0 +1,43 @@
+<html>
+<head>
+    <script>
+        var arr = [{pid:1,pname:'chair',qty:34,price:3456},{pid:2,pname:'table',qty:25,price:3406},{pid:3,pname:'shelf',qty:30,price:3333},{pid:4,pname:'stool',qty:10,price:3232}];
+
+        function displaytable() {
+            // Display the table with the initial product data
+            var table = "<table><tr><th>Product ID</th><th>Product Name</th><th>Quantity</th><th>Price</th></tr>";
+            for (var i = 0; i < arr.length; i++) {
+                table += "<tr><td>" + arr[i].pid + "</td><td>" + arr[i].pname + "</td><td>" + arr[i].qty + "</td><td>" + arr[i].price + "</td></tr>";
+            }
+            table += "</table>";
+            document.body.innerHTML += table;
+        }
+
+        function addnewproduct() {
+            // Get the input values
+            var pid = document.getElementById("pid").value;
+            var pname = document.getElementById("pname").value;
+            var qty = document.getElementById("qty").value;
+            var price = document.getElementById("price").value;
+
+            // Create a new product object
+            var newProduct = {pid: parseInt(pid), pname: pname, qty: parseInt(qty), price: parseInt(price)};
+
+            // Add the new product to the array
+            arr.push(newProduct);
+
+            // Display the updated table
+            displaytable();
+        }
+    </script>
+</head>
+<body onload="displaytable()">
+    <form>
+        product id: <input type="text" name="pid" id="pid"><br>
+        product name: <input type="text" name="pname" id="pname"><br>
+        quantity: <input type="text" name="qty" id="qty"><br>
+        price: <input type="text" name="price" id="price"><br>
+        <button type="button" name="btn" id="btn" value="add" onclick="addnewproduct()">add new</button>
+    </form>
+</body>
+</html>
